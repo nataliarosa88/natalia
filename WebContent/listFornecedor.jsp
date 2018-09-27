@@ -9,6 +9,10 @@
 <title>Fornecedores</title>
 </head>
 <body>
+
+<a href="fornecedor.jsp"><img src="add.png"/></a>
+
+
 	<table>
 		<thead>
 			<tr>
@@ -27,5 +31,8 @@
 		</c:forEach>
 		</tbody>
 	</table>
+	
+
+	
 </body>
 </html>

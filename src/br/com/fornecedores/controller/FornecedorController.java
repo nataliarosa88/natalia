@@ -46,10 +46,13 @@ public class FornecedorController extends HttpServlet{
 		fornecedor.setNome(request.getParameter("nome"));
 		fornecedor.setEmail(request.getParameter("email"));
 		fornecedor.setTelefone(request.getParameter("telefone"));
-	
-		System.out.println(fornecedor.getNome());
-		System.out.println(fornecedor.getEmail());
-		System.out.println(fornecedor.getTelefone());
+		
+		FornecedorDao fornecedorDao = new FornecedorDao();
+		fornecedorDao.addFornecedor(fornecedor);
+
+		RequestDispatcher view = request.getRequestDispatcher(LIST_FORNECEDOR);
+		request.setAttribute("fornecedores", dao.getAllFornecedores());
+		view.forward(request, response);
 	
 	}
 
