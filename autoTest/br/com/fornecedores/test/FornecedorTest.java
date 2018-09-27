@@ -1,24 +1,22 @@
-package br.com.fornecedores.teste;
+package br.com.fornecedores.test;
+import org.junit.Test;
 
 import br.com.fornecedores.model.Fornecedor;
 
-public class TestaFornecedor {
-	
-	public static void main (String args[]) {
+public class FornecedorTest {
+	@Test
+	public  void testat () {
 		
 		Fornecedor fornecedor1 = new Fornecedor();
 		
 		fornecedor1.setNome("joao");
-		System.out.println(fornecedor1.getNome());
-		
-		
 		fornecedor1.setEmail("j@j.com");
-		System.out.println(fornecedor1.getEmail());
-		
-		
 		fornecedor1.setTelefone("3232-3232");
+		
+		System.out.println(fornecedor1.getNome());
+		System.out.println(fornecedor1.getEmail());
 		System.out.println(fornecedor1.getTelefone());
-	
+		
 	}
 
 }
