@@ -36,7 +36,7 @@ public class FornecedorController extends HttpServlet{
             fornecedorDao.deleteFornecedor(fornecedorCodigo);
 					
 			forward = LIST_FORNECEDOR;
-			request.setAttribute("fornecedor", fornecedorDao.getAllFornecedores());
+			request.setAttribute("fornecedores", fornecedorDao.getAllFornecedores());
 		}else if (action.equalsIgnoreCase("edit")){
 			
 			forward = INSERT_OR_EDIT;
@@ -47,7 +47,7 @@ public class FornecedorController extends HttpServlet{
 			
 		}else if (action.equalsIgnoreCase("listFornecedor")){
 			forward = LIST_FORNECEDOR;
-			request.setAttribute("fornecedor", fornecedorDao.getAllFornecedores());
+			request.setAttribute("fornecedores", fornecedorDao.getAllFornecedores());
         } else {
             forward = INSERT_OR_EDIT;
         }
@@ -82,7 +82,7 @@ public class FornecedorController extends HttpServlet{
 		
 
 		RequestDispatcher view = request.getRequestDispatcher(LIST_FORNECEDOR);
-		request.setAttribute("fornecedor", fornecedorDao.getAllFornecedores());
+		request.setAttribute("fornecedores", fornecedorDao.getAllFornecedores());
 		view.forward(request, response);
 	
 	}
