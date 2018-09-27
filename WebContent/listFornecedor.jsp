@@ -16,17 +16,24 @@
 	<table>
 		<thead>
 			<tr>
+				<th>Codigo</th>
 				<th>Nome</th>
 				<th>Email</th>
 				<th>Telefone</th>
+				<th>Update</th>
+				<th>Delete</th>
+				
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach items="${fornecedores}" var="fornecedor">
 			<tr>
+				<td><c:out value="${fornecedor.codigo}" /></td>
 				<td><c:out value="${fornecedor.nome}" /></td>
 				<td><c:out value="${fornecedor.email}" /></td>
 				<td><c:out value="${fornecedor.telefone}" /></td>
+				<td><a href="FornecedorController?action=edit&fornecedorCodigo=<c:out value="${fornecedor.codigo}"/>">alterar</a></td>
+				<td><a href="FornecedorController?action=delete&fornecedorCodigo=<c:out value="${fornecedor.codigo}"/>">excluir</a></td>
 			</tr>
 		</c:forEach>
 		</tbody>

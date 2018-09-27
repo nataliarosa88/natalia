@@ -10,23 +10,28 @@
 </head>
 <body>
 
-	<form method="POST" action="FornecedorController" name="frmAddUser">
+	<form method="POST" action="FornecedorController" name="frmAddFornecedor">
 
 		<table>
+		
+			<tr>
+				<td>Codigo:</td>
+				<td><input type="text" name="codigo" readonly="readonly" value="<c:out value="${fornecedor.codigo}"/>"/></td>
+			</tr>
 			<tr>
 				<td>Nome:</td>
-				<td><input type="text" name="nome" /></td>
+				<td><input type="text" name="nome"  value="<c:out value="${fornecedor.nome}"/>"/></td>
 			</tr>
 			<tr>
 				<td>Email:</td>
-				<td><input type="text" name="email" /></td>
+				<td><input type="text" name="email"  value="<c:out value="${fornecedor.email}"/>"/></td>
 			</tr>
 			<tr>
 				<td>Telefone:</td>
-				<td><input type="text" name="telefone" /></td>
+				<td><input type="text" name="telefone"  value="<c:out value="${fornecedor.telefone}"/>"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="incluir" /></td>
+				<td colspan="2"><input type="submit" value="Confirmar" /></td>
 			</tr>
 		</table>
 
