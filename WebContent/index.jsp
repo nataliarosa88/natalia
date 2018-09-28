@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Fornecedores</title>
+    <title>Fornecedores</title>
 </head>
 <body>
 	<jsp:forward page="/FornecedorController?action=listFornecedor" />

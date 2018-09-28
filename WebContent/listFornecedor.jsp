@@ -5,24 +5,25 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Fornecedores</title>
+    <title>Fornecedores</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
 </head>
 <body>
 
-<a href="fornecedor.jsp"><img src="add.png"/></a>
+<h4 class="text-center text-primary">Listagem de Fornecedores</h4>
 
 
-	<table>
+<a href="fornecedor.jsp"><button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></a>
+
+
+	<table class="table table-hover table-striped">
 		<thead>
 			<tr>
-				<th>Codigo</th>
-				<th>Nome</th>
-				<th>Email</th>
-				<th>Telefone</th>
-				<th>Update</th>
-				<th>Delete</th>
-				
+				<th><span class="text-primary">Codigo</span></th>
+				<th><span class="text-primary">Nome</span></th>
+				<th><span class="text-primary">Email</span></th>
+				<th colspan="3"><span class="text-primary">Telefone</span></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -32,8 +33,8 @@
 				<td><c:out value="${fornecedor.nome}" /></td>
 				<td><c:out value="${fornecedor.email}" /></td>
 				<td><c:out value="${fornecedor.telefone}" /></td>
-				<td><a href="FornecedorController?action=edit&fornecedorCodigo=<c:out value="${fornecedor.codigo}"/>">alterar</a></td>
-				<td><a href="FornecedorController?action=delete&fornecedorCodigo=<c:out value="${fornecedor.codigo}"/>">excluir</a></td>
+				<td><a href="FornecedorController?action=edit&fornecedorCodigo=<c:out value="${fornecedor.codigo}"/>"><button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a></td>
+				<td><a href="FornecedorController?action=delete&fornecedorCodigo=<c:out value="${fornecedor.codigo}"/>"><button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></a></td>
 			</tr>
 		</c:forEach>
 		</tbody>

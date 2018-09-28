@@ -5,37 +5,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title></title>
+    <title>Fornecedores</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
 </head>
-<body>
+<body class="container">
+    
+    <h4 class="text-center text-primary">Cadastro de Fornecedores</h4>
+    
+    <div id="mensagemView"></div>
+    
+	<form class="form" method="POST" action="FornecedorController"s>
 
-	<form method="POST" action="FornecedorController" name="frmAddFornecedor">
+		<div class="form-group">
+			<label class="text-primary" for="text">Codigo:</label>
+			<input type="text" name="codigo" class="form-control" readonly="readonly" value="<c:out value="${fornecedor.codigo}" />" />
+		</div>    
+		<div class="form-group">
+			<label class="text-primary" for="text">Nome:</label>
+			<input type="text" name="nome" class="form-control" required autofocus value="<c:out value="${fornecedor.nome}" />" />
+		</div>   
+		<div class="form-group">
+			<label class="text-primary" for="text">Email:</label>
+			<input type="text" name="email" class="form-control" value="<c:out value="${fornecedor.email}" />" />
+		</div>   
+		<div class="form-group">
+			<label class="text-primary" for="text">Telefone:</label>
+			<input type="text" name="telefone" class="form-control" value="<c:out value="${fornecedor.telefone}" />" />
+		</div>   
 
-		<table>
-		
-			<tr>
-				<td>Codigo:</td>
-				<td><input type="text" name="codigo" readonly="readonly" value="<c:out value="${fornecedor.codigo}"/>"/></td>
-			</tr>
-			<tr>
-				<td>Nome:</td>
-				<td><input type="text" name="nome"  value="<c:out value="${fornecedor.nome}"/>"/></td>
-			</tr>
-			<tr>
-				<td>Email:</td>
-				<td><input type="text" name="email"  value="<c:out value="${fornecedor.email}"/>"/></td>
-			</tr>
-			<tr>
-				<td>Telefone:</td>
-				<td><input type="text" name="telefone"  value="<c:out value="${fornecedor.telefone}"/>"/></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Confirmar" /></td>
-			</tr>
-		</table>
+		<button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-ok" /></button><button class="btn btn-primary" formnovalidate onclick="javascript:window.history.go(-1); return false;" type="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
 
 	</form>
-	<a href="index.jsp"><img src="back.png"/></a>
+	
 </body>
 </html>
